@@ -2,60 +2,68 @@
 echo "number of records?"
 read numberOfRecord
 
-for i in {1..$numberOfRecord}
+
+for i in $(seq 1 $numberOfRecord)
 do
 mysql -u root -ppassword school <<EOF
-INSERT INTO  student(name,subject,marks ) 
-
+INSERT INTO  student(reg_id,name,subject,marks )
 VALUES (
-    
-    char(round(rand()*25)+100),
-    ' Buddhist',
-    round(rand() * 100,2)),
+    'id$i',
+    'name$i',
+    'Buddhist',
+    round(rand() * 100,2)
+    ),
+    (
 
-(
-  char(round(rand()*25)+100),
+    'id$i',
+    'name$i',
     'Sinhala',
     round(rand() * 100,2)),
 
  (
-   char(round(rand()*25)+100),
+
+   'id$i',
+    'name$i',
     'English',
     round(rand() * 100,2)),
 
  (
-   char(round(rand()*25)+100),
-    ' Literature',
+
+   'id$i',
+    'name$i',
+    'Literature',
     round(rand() * 100,2)),
 
  (
-    char(round(rand()*25)+100),
-    ' Maths',
+
+    'id$i',
+    'name$i',
+    'Maths',
     round(rand() * 100,2)),
 
 (
-    char(round(rand()*25)+100),
-    ' Social Study',
+
+    'id$i',
+    'name$i',
+    'Social Study',
     round(rand() * 100,2)),
  (
-    char(round(rand()*25)+100),
-   'History',
+
+    'id$i',
+    'name$i',
+    'History',
     round(rand() * 100,2)),
 
 (
-    
-    char(round(rand()*25)+100),
-    (CASE CEIL(RAND()*3)    
+
+    'id$i',
+    'name$i',
+    (CASE CEIL(RAND()*3)
         WHEN 1 THEN 'Art'
         WHEN 2 THEN 'Computer'
         WHEN 3 THEN 'Literature'
         END),
     round(rand() * 100,2));
-
- 
-
 EOF
 
 done
-
-

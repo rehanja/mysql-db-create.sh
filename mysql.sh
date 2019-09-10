@@ -11,25 +11,25 @@ marks int(10)
 INSERT INTO  student(name,subject,marks ) 
 
 VALUES (
-
+    
     char(round(rand()*25)+100),
     ' Buddhist',
     round(rand() * 100,2)),
 
 (
-
+    
     char(round(rand()*25)+100),
     'Sinhala',
     round(rand() * 100,2)),
 
  (
-
+    
     char(round(rand()*25)+100),
     'English',
     round(rand() * 100,2)),
 
  (
-
+    
     char(round(rand()*25)+100),
     ' Literature',
     round(rand() * 100,2)),
